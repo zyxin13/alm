@@ -32,3 +32,5 @@ _ReSharper*/
 packages/
 *.iml
 .idea/*
+x-alm-web/target/**
+x-alm/x-alm-service/target/**
