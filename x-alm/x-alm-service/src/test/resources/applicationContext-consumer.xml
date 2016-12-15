@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+    http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <dubbo:monitor protocol="registry"/>
+
+    <!-- 消费方应用信息 -->
+    <dubbo:application name="alm-consumer-unit-test"/>
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry protocol="zookeeper" address="127.0.0.1:2181"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:reference id="testService" interface="com.zoula.alm.api.TestService" timeout="10000"
+                     retries="0" url="dubbo://127.0.0.1:20880/com.zoula.alm.api.TestService"/>
+</beans>
