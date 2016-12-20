@@ -1,10 +1,12 @@
 package com.zoula.alm.service.model;
 
+import java.io.Serializable;
+
 /**
  * Created by yuxin.zou on 2016/12/20.
  */
 
-public class User {
+public class User implements Serializable{
     private Integer id;
     private String username;
     private String nickname;
