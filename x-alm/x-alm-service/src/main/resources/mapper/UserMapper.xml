@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zoula.alm.service.dao.UserDao">
+    <resultMap id="BaseResultMap" type="com.zoula.alm.service.model.User">
+        <id column="USER_ID" property="id" jdbcType="INTEGER" />
+        <result column="USER_NAME" property="username" jdbcType="CHAR" />
+        <result column="USER_NICKNAME" property="nickname" jdbcType="CHAR" />
+        <result column="USER_PASSWORD" property="password" jdbcType="CHAR" />
+        <result column="USER_EMAIL" property="email" jdbcType="CHAR" />
+    </resultMap>
+    <select id="selectUserById" parameterType="int" resultMap="BaseResultMap" >
+        SELECT * FROM user WHERE USER_ID = #{id}
+    </select>
+</mapper>

@@ -18,7 +18,7 @@ public class TestServiceTest {
 
     @Test
     public void test() {
-        String res = testService.test("World");
+        String res = testService.test("1");
         System.out.println(res);
     }
 }
